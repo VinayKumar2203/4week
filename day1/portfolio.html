@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to the portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            ]
+        }
+
+        #navbar {
+            background-color: aqua;
+            text-align: center;
+            padding: 25px;
+        }
+
+        #navlink {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            list-style-type: none;
+            cursor: pointer;
+
+        }
+
+        #navlink li a {
+            text-decoration: none;
+        }
+        #tableHead{
+            background-color: rgb(4, 4, 125);
+            color:white;
+        }
+        #tableBody tr >td{
+            border: 1px solid ;
+        }
+        #section_one{
+            width: 80%;
+            margin: auto;
+        }
+        #footer{
+            background-color: rgb(5, 5, 99);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div>
+                <h1>My Portfolio</h1>
+            </div>
+            <div>
+                <ul id="navlink">
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">contact</a></li>
+                    <li><a href="#">projects</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <section id="section_one">
+        <div>
+            <h1>Welcome to my portfolio</h1>
+            <p>This portfolio showcases my projects and provides information about my background and contact details</p>
+        </div>
+        <div>
+            <h1>About</h1>
+            <p>Hello! I'm a web developer passionate about building dynamic and responsive websites. I enjoy creating
+                user-friendly interfaces and working on challenging projects </p>
+        </div>
+        <div>
+            <h1>Projects</h1>
+            <table>
+                <thead id="tableHead">
+                    <th>Project Name</th>
+                    <th>Description</th>
+                    <th>Year</th>
+                </thead>
+                <tbody id="tableBody">
+                  <tr>
+                    <td>Project Alphe</td>
+                    <td>A web-based tool for tracking project progress and managing tasks</td>
+                    <td>2023</td>
+                  </tr>
+                  <tr>
+                    <td>Portfilio site</td>
+                    <td>A presonal website showcasing my work and skills as a web developer</td>
+                    <td>2024</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h1>Contact</h1>
+            <form action="">
+                <label for="name">Name:</label>
+                <input type="text" name="name">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" name="email">
+                <br>
+                <label for="">Message:</label>
+                <br>
+                <textarea name="" id="" rows="5"></textarea>
+                <br>
+                <button type="submit">submit</button>
+            </form>
+        </div>
+    </section>
+    <footer id="footer">
+        <p>this is created by vinay sikhera</p>
+    </footer>
+</body>
+
+</html>
