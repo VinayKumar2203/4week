@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #block-element {
+            display: block;
+            border: 1px solid;
+        }
+
+        #inline-element {
+            display: inline;
+            background-color: aliceblue;
+        }
+
+        #inline-block-element {
+            height: 100px;
+            width: 150px;
+            border: 2px solid;
+            display: inline-block;
+        }
+
+        #hidden-element {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="block-element">block-element </div>
+        <div id="inline-element">inline-element</div>
+        <div id="inline-block-element">inline-block-element</div>
+        <div id="hidden-element">hidden-element</div>
+    </div>
+    <button id="clickBtn">click hidden-element</button>
+</body>
+
+</html>
+<script>
+    let hiddenElement = document.getElementById("hidden-element");
+    let clickBtn = document.getElementById('clickBtn');
+    let flag=true;
+    clickBtn.addEventListener('click',function () {
+        console.log("btn is clicked")
+        if (flag) {
+            flag=false
+            hiddenElement.style.display="block";
+        }else{
+            flag=true
+            hiddenElement.style.display="none";
+        }
+        console.log(flag)
+    })
+    // flag=true
+  
+</script>
