@@ -1,7 +1,7 @@
 const library = {
     books: [{ title: "The Hobbit", author: "J.R.R. Tolkien", year: 1937 }],
     addBook(book) {
-        if (typeof !book.title==String || typeof !book.author==String || !book.year==Number) {
+        if (typeof !book.title=="string" || typeof !book.author=="string" || !book.year=="number") {
             console.log("Book information is incomplete.");
             return;
         }
