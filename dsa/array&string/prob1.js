@@ -10,19 +10,17 @@ let testCase = [];
 const lines = num.trim().split('\n');
 let index = 0;
 
-// Total test cases
+// Step 1: Get number of test cases
 const T = parseInt(lines[index++]);
-console.log("Total Test Cases:", T);
 
-// Read each test case
+// Step 2: Read each test case
 for (let t = 0; t < T; t++) {
-    const N = parseInt(lines[index++]);
-    const arr = lines[index++].split(' ').map(Number);
-    testCase.push(arr);
+    const N = parseInt(lines[index++]); // Read size of array
+    const arr = lines[index++].trim().split(' ').map(Number); // Read the array
+    testCase.push(arr); // Add to testCase list
 }
-console.log("Test Cases:", testCase);
 
-// Function to process test cases
+// Step 3: Process each test case
 function processTestCases(cases) {
     for (let test of cases) {
         const minVal = Math.min(...test);
@@ -31,5 +29,4 @@ function processTestCases(cases) {
     }
 }
 
-// Call the function
 processTestCases(testCase);
