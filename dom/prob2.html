@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="ul">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <button id="btn">addItem</button>
+</body>
+
+</html>
+<script>
+    let btn = document.getElementById("btn");
+    let ul = document.querySelector(".ul");
+
+    function changeLi() {
+        let li = document.getElementsByTagName('li');
+        for (let i = 0; i < li.length; i++) {
+            console.log(li[i]);
+            if (i % 2 == 0) {
+                li[i].style.backgroundColor = "red"
+                li[i].style.font = "bold";
+            }
+        }
+    }
+
+    changeLi();
+
+    btn.addEventListener("click", () => {
+        let li = document.createElement('li');
+        li.innerText = "new item";
+        console.log(li)
+        ul.append(li);
+        changeLi();
+        // ul.innerHTML = `<li> new item</li>`
+    })
+</script>
