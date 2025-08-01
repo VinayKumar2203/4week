@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="color name" id="colorInput">
+    <input type="text" placeholder="change Text" id="textInput">
+    <button id="bgBtn">Change Background</button>
+    <button id="textBtn">Update Text</button>
+    <div id="outputDiv">This is some initial content</div>
+</body>
+
+</html>
+<script>
+    let colorInput = document.getElementById('colorInput');
+    let textInput = document.getElementById("textInput");
+    let bgBtn = document.getElementById("bgBtn");
+    let textBtn = document.getElementById("textBtn");
+    let outputDiv = document.getElementById("outputDiv");
+
+    bgBtn.addEventListener("click", () => {
+        const color = colorInput.value.trim();
+        outputDiv.style.backgroundColor = color;
+
+        // Check if color was applied successfully
+        const test = outputDiv.style.backgroundColor;
+        if (test === "") {
+            alert("Invalid color name!");
+        }
+    });
+
+    textBtn.addEventListener("click", () => {
+        const newText = textInput.value;
+
+        if (newText == "") {
+            alert("please enter some text");
+        } else {
+            outputDiv.innerText = newText;
+        }
+    })
+
+</script>
