@@ -8,7 +8,23 @@
 </head>
 
 <body>
-
+    <h1 id="head">vinay</h1>
+    <p>vinay</p>
+    <p>vinay kumar</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div class="container">this is div with class name "container"</div>
 </body>
 
 </html>
+<script>
+    let head = document.getElementById("head");
+    head.innerText = "Welcome to the DOM World!."
+
+    let para = document.getElementsByTagName("p");
+    for (let i = 0; i < para.length; i++) {
+        para[i].style.backgroundColor = "lightblue"
+
+    }
+    let container = document.querySelector(".container");
+    container.style.backgroundColor = "gold";
+</script>
