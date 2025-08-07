@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Count</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+    }
+
+    li {
+      padding: 14px 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: #575757;
+    }
+
+    .active {
+      background-color: #575757;
+    }
+
+    .page {
+      padding: 20px;
+      margin: auto;
+      max-width: 800px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
+
+<script type="text/babel">
+  const { useState } = React;
+
+  function Navbar({ onSelect, activePage }) {
+    return (
+      <ul>
+        <li
+          className={activePage === "home" ? "active" : ""}
+          onClick={() => onSelect("home")}
+        >
+          Home
+        </li>
+        <li
+          className={activePage === "contact" ? "active" : ""}
+          onClick={() => onSelect("contact")}
+        >
+          Contact
+        </li>
+        <li
+          className={activePage === "about" ? "active" : ""}
+          onClick={() => onSelect("about")}
+        >
+          About Us
+        </li>
+      </ul>
+    );
+  }
+
+  function Home() {
+    return (
+      <div className="page">
+        <h1>Welcome to the Home Page</h1>
+      </div>
+    );
+  }
+
+  function About() {
+    return (
+      <div className="page">
+        <h1>Welcome to the About Page</h1>
+      </div>
+    );
+  }
+
+  function Contact() {
+    return (
+      <div className="page">
+        <h1>Welcome to the Contact Page</h1>
+      </div>
+    );
+  }
+
+  function App() {
+    const [selectedPage, setSelectedPage] = useState("home");
+
+    return (
+      <>
+        <Navbar onSelect={setSelectedPage} activePage={selectedPage} />
+        {selectedPage === "home" && <Home />}
+        {selectedPage === "about" && <About />}
+        {selectedPage === "contact" && <Contact />}
+      </>
+    );
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>
