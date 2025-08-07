@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- Vanilla Button OUTSIDE root -->
+    <div id="vanilla">
+        <button id="vanillaBtn">Vanilla JS</button>
+    </div>
+
+    <!-- React App -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Vanilla button logic
+        document.getElementById("vanillaBtn").addEventListener("click", () => {
+            alert("Vanilla JS Button Clicked!");
+        });
+
+        // React Components
+        const { useState } = React;
+
+        function ChangeTitle() {
+            const [title, setTitle] = useState("This is React");
+            const [count, setCount] = useState(0);
+            return (
+                <>
+                    <p>{title}</p>
+                    <h1>{count}</h1>
+                    <button onClick={() => setTitle("Updated React Title")}>Change React</button>
+                    <button onClick={() => setCount(pre => pre + 1)}>increaseCount</button>
+                </>
+            );
+        }
+
+        function App() {
+            return (
+                <>
+                    <h2>Hello from React</h2>
+                    <ChangeTitle />
+                </>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
